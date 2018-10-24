@@ -3,13 +3,13 @@ import { IProduct } from "./IProduct";
 import { ProductService } from "./product.service";
 
 @Component({
-    selector: "pm-products",
     templateUrl: "./product-list.component.html"
 })
 export class ProductListComponent implements OnInit {
-    title: string = 'Available products';
+    pageTitle: string = 'Available products';
     showImages: boolean = false;
     currentRating: string;
+    errorMessage: any;
     _filter: string;
     get filter(): string {
         return this._filter;
@@ -40,7 +40,8 @@ export class ProductListComponent implements OnInit {
             products => {
                 this.products = products;
                 this.finalProducts = this.products;
-            }
+            },
+            error => this.errorMessage = error
         );
     }
 

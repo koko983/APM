@@ -1,8 +1,19 @@
 <!--The whole content below can be removed with the new code.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!!
-  </h1>
-  <ex-dashboard></ex-dashboard>
+<div>
+  <div class="text-center">
+    <h1>
+      {{pageTitle}}
+    </h1>
+    <div>
+      <a [routerLink]="['/welcome']"
+      class="btn btn-info">welcome</a> &nbsp;
+      <a [routerLink]="['/products']"
+      class="btn btn-info">products</a>
+    </div>
+  </div>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+  <!-- <ex-dashboard></ex-dashboard> -->
   <!-- <pm-products></pm-products> -->
 </div>
