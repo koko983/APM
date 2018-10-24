@@ -1,0 +1,16 @@
+<!-- GO TO: http://10.33.0.190:8070/Extivita/index.html#g=1&p=patient_portal_admin_-_dashboard -->
+<table class="table table-bordered koko">
+  <tr>
+    <th>Dive #</th>
+    <th>Chamber</th>
+    <th>Dive Start</th>
+    <th>Dive End</th>
+    <th>Seat</th>
+    <th>Paitent</th>
+    <th>Inidication Category?</th>
+    <th>Status</th>
+  </tr>
+  <!-- <ex-dive [dive]="singleDive"></ex-dive> -->
+</table>
+
+<table class="table table-bordered koko diveTable" *ngFor="let dive of dives" [dive]="dive"></table>

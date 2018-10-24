@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.min.css";
+
+div.card-header {
+ font-size: large;
+}
+
+div.card {
+  margin-top: 10px
+}
+
+table,
+tr,
+td,
+th {
+  border: 1px solid black !important;
+}
+
+table.koko{
+  max-width: 1200px !important;
+  margin: 0 !important;
+}
+
+table.koko th, table.koko td{
+  width: 12.5% !important;
+}
+
+table td.bg-primary {
+  color: #fff;
+  vertical-align: middle;
+  text-align: center;
+  font-weight: bold;
+}

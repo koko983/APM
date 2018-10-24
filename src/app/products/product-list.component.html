@@ -1,0 +1,31 @@
+<div>
+    <h3>{{title}} | {{currentRating}}</h3>
+    <div class="form-group">
+        <input [(ngModel)]="filter" />
+    </div>
+    {{filter}}
+    <table ng-if="finalProducts && finalProducts.length" class="table table-bordered">
+        <tr>
+            <th><button (click)="toggleImages()" class="btn btn-primary">{{showImages?"hide":"show"}} image</button></th>
+            <th>Name</th>
+            <th>Code</th>
+            <th>Available</th>
+            <th>Price</th>
+            <th>5 Star Rating</th>
+        </tr>
+        <tr *ngFor="let product of finalProducts">
+            <td>
+                <img 
+                *ngIf="showImages"
+                [src]="product.imageUrl" [alt]="product.productName" class="img-responsive" style="margin: 5px; max-width: 100px; max-height: 100px">
+            </td>
+            <td>{{product.productName}}</td>
+            <td>{{product.productCode | covertToSpaces : '-'}}</td>
+            <td>{{product.releaseDate}}</td>
+            <td>{{product.price | currency}}</td>
+            <td>
+                <pm-star [rating]="product.starRating" (ratingClicked)="onRatingClickedToo($event)"></pm-star>
+            </td>
+        </tr>
+    </table>
+</div>
