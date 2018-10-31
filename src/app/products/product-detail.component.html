@@ -1,5 +1,17 @@
-<div>
-  <h3>
-    {{pageTitle}}<span *ngIf="product">: {{product.productName}}</span>
+<div class="text-center" style="margin-top:100px">
+  <h3 *ngIf="!product">
+    loading ...
   </h3>
+
+  <div *ngIf="product">
+    <h3>
+      {{pageTitle}}: {{product.productName}}
+    </h3>
+    
+    <div>
+      <img [src]="product.imageUrl" alt="product.productName">
+    </div>
+    
+    <button class="btn btn-default" (click)="onBack()">&lt; Back</button>
+  </div>
 </div>

@@ -1,10 +1,10 @@
-import { IPatient } from "./IPatient";
+import { IChamber } from "./IChamber";
+import { ISeat } from "./ISeat";
 
 export interface IDive {
-    number: number;
-    chamber: string;
+    Id: string;
+    number: string;
+    chamber: IChamber;
     start: string;
     end: string;
-    seats: string[];
-    patients: IPatient[];
 }

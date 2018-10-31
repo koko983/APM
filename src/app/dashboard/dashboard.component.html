@@ -1,4 +1,5 @@
 <!-- GO TO: http://10.33.0.190:8070/Extivita/index.html#g=1&p=patient_portal_admin_-_dashboard -->
+<div *ngIf="dives && dives.length">
 <table class="table table-bordered koko">
   <tr>
     <th>Dive #</th>
@@ -14,3 +15,5 @@
 </table>
 
 <table class="table table-bordered koko diveTable" *ngFor="let dive of dives" [dive]="dive"></table>
+
+</div>

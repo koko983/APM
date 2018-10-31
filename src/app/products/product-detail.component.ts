@@ -8,10 +8,12 @@ import { Router, Routes, ActivatedRoute } from '@angular/router';
 })
 export class ProductDetailComponent implements OnInit {
   id: number;
-  pageTitle: string = "Product Details";
+  pageTitle: string = "Product";
   product: IProduct;
 
-  constructor(private productService: ProductService, private route: ActivatedRoute) {
+  constructor(private productService: ProductService,
+     private route: ActivatedRoute,
+     private router: Router) {
     this.id = parseInt(this.route.snapshot.paramMap.get('id'));
   }
 
@@ -19,5 +21,9 @@ export class ProductDetailComponent implements OnInit {
     this.productService.getProducts().subscribe(
       products => this.product = products.find(p => p.productId === this.id)
     )
+  }
+
+  onBack():void{
+    this.router.navigate(['/products']);
   }
 }
