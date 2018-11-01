@@ -8,6 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DiveComponent } from './dashboard/dive.component';
 import { WelcomeComponent } from './home/welcome.component';
 import { ProductModule } from './products/product.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -19,12 +20,8 @@ import { ProductModule } from './products/product.module';
   imports: [
     HttpClientModule,
     BrowserModule,
-    RouterModule.forRoot([
-      { path: 'welcome', component: WelcomeComponent },
-      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-      { path: '**', component: DashboardComponent }
-    ]),
-    ProductModule
+    ProductModule,
+    AppRoutingModule
   ],
   bootstrap: [AppComponent]
 })
