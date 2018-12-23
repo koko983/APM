@@ -1,0 +1,11 @@
+<div>
+  <div>
+    dick id: <input type="number" [(ngModel)]="dickId"> <button (click)="updateDicks()">Update</button>
+    {{dickId}}
+  </div>
+  <ul *ngIf="finalDicks?.length">
+    <li *ngFor="let dick of finalDicks">
+      <pre>{{dick|json}}</pre>
+    </li>
+  </ul>
+</div>

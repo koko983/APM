@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "color": "black",
+        "length": 21.2,
+        "radius": 5
+    },
+    {
+        "id":2,
+        "color":"red",
+        "length": 19,
+        "radius": 4.5
+    },
+    {
+        "id": 4,
+        "color": "white",
+        "length": 18,
+        "radius": 4.5
+    }
+]

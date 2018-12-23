@@ -5,13 +5,22 @@
       {{pageTitle}}
     </h1>
     <div>
-      <a [routerLink]="['/welcome']"
-      class="btn btn-info">welcome</a> &nbsp;
-      <a [routerLink]="['/products']"
-      class="btn btn-info">products</a>
+      <a [routerLink]="['/welcome']" class="btn btn-info">welcome</a> &nbsp;
+      <a [routerLink]="['/products']" class="btn btn-info">products</a> &nbsp;
+      <a [routerLink]="['/perfect', 1]" class="btn btn-info">dicks page</a>
     </div>
   </div>
-  <div class="container">
+    <div class="container">
+      
+    <div class="example-button-row">
+        <button mat-button>Basic</button>
+        <button mat-button color="primary">Primary</button>
+        <button mat-button color="accent">Accent</button>
+        <button mat-button color="warn">Warn</button>
+        <button mat-button disabled>Disabled</button>
+        <a mat-button routerLink="/perfect/1">Link</a>
+    </div>
+           
     <router-outlet></router-outlet>
   </div>
   <!-- <ex-dashboard></ex-dashboard> -->
