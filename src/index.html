@@ -1,13 +1,44 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>APM</title>
   <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <link rel="icon"
+        type="image/x-icon"
+        href="favicon.ico">
 </head>
+
 <body>
   <pm-root></pm-root>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="./assets/libs/jquery-creditcardvalidator/jquery.creditCardValidator.js"></script>
+  <script>
+    $(function () {
+      console.log('im here');
+      var previousState = false;
+      if ($('#Number').length) {
+        $('#Number').validateCreditCard(function (result) {
+          console.log('result is ' + result.valid);
+          if (result.valid != previousState) {
+            $("#Number").toggleClass('is-invalid');
+            previousState = result.valid;
+          }
+          if (result.valid && result.card_type != null) {
+            var name = result.card_type.name;
+            $("#CardType").val(name);
+            $("#card_type_img").attr("src", "./assets/images/icons/creditCards/" + name + ".gif");
+          } else {
+            $("#CardType").val("");
+            $("#card_type_img").attr("src", "./assets/images/icons/creditCards/none.png");
+          }
+        });
+      }
+    });
+  </script>
 </body>
+
 </html>

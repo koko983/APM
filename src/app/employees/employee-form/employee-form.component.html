@@ -1,0 +1,42 @@
+<button (click)="dicksForKids()">dicksForKids</button>
+<form novalidate
+      (ngSubmit)="save()"
+      [formGroup]="formGroup">
+  <div class="form-group">
+    <label for="firstName">First name</label>
+    <input type="text"
+           id="firstName"
+           class="form-control"
+           formControlName="firstName"
+           [ngClass]="{'is-invalid': (formGroup.get('firstName').touched || formGroup.get('firstName').dirty) && !formGroup.get('firstName').valid }" />
+    <span class="invalid-feedback">
+      <span *ngIf="formGroup.get('firstName').errors?.required">first name is required</span>
+      <span *ngIf="formGroup.get('firstName').errors?.minlength">minimum length is 3 characters</span>
+    </span>
+  </div>
+
+  <div class="form-group">
+    <label for="cardNumber">Credit card number</label>
+    <input type="tel"
+           id="cardNumber"
+           class="form-control"
+           formControlName="cardNumber">
+    <span class="text-danger" *ngIf="formGroup.get('cardNumber').errors?.length">
+      credit card number is invalid
+    </span>
+    <div>
+      <input type="text" value="{{cardType}}">
+      <img [src]="creditCardImageSource"
+           width="50"
+           alt="issuer"
+           id="card_type_img">
+    </div>
+  </div>
+
+  <div>
+    <button class="btn btn-primary"
+            (click)="save()"
+            [disabled]="!formGroup.valid">Save</button>
+  </div>
+
+</form>
